@@ -1,5 +1,7 @@
 <?php
 
+use App\Livewire\Posts\Posts;
+use App\Livewire\Posts\CreatePost;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,6 @@ Route::get('/', function () {
 Route::get('/list', function () {
     return '<h1>List</h1>';
 });
+
+Route::get('/posts', Posts::class);
+Route::get('/posts/create', CreatePost::class);
