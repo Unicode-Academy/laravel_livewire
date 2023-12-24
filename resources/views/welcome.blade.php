@@ -7,8 +7,12 @@
     @livewireStyles
 </head>
 <body>
+    @php 
+        $title = "Create Posts";
+    @endphp
     <h1>Demo Livewire</h1>
     <livewire:counter />
+    <livewire:posts.create-post :title="$title"/>
     @livewireScripts
 </body>
 </html>
