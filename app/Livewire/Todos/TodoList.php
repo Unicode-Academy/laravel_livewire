@@ -13,6 +13,11 @@ class TodoList extends Component
         $this->todoList = $todoList;
     }
 
+    public function handleDelete($id)
+    {
+        $this->dispatch('deleted-todo', $id);
+    }
+
     public function render()
     {
         return view('livewire.todos.todo-list');

@@ -3,7 +3,7 @@
     <li wrie:key="{{$item['id']}}">
         <input type="checkbox">
         <span>{{$item['name']}}</span>
-        <button>&times;</button>
+        <button wire:confirm="Are you sure you want to delete this todo?" wire:click="handleDelete('{{$item['id']}}')">&times;</button>
     </li>
     @endforeach
 </ul>

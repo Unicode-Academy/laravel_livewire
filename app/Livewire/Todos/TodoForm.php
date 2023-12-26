@@ -10,13 +10,8 @@ class TodoForm extends Component
 
     public function handleAdd()
     {
-        if ($this->name) {
-            $this->dispatch('created-todo', $this->name);
-            $this->reset();
-            session()->flash('msg', 'Thêm thành công');
-        } else {
-            session()->flash('msg', 'Vui lòng nhập tên');
-        }
+        $this->dispatch('created-todo', $this->name);
+        $this->reset();
     }
 
     public function render()
