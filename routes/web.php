@@ -1,8 +1,11 @@
 <?php
 
+use App\Livewire\Counter;
 use App\Livewire\Posts\Posts;
 use App\Livewire\Posts\CreatePost;
 use App\Livewire\Posts\UpdatePost;
+use App\Livewire\Todos\TodoForm;
+use App\Livewire\Todos\Todos;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +30,5 @@ Route::get('/list', function () {
 Route::get('/posts', Posts::class);
 Route::get('/posts/create', CreatePost::class);
 Route::get('/posts/edit/{post}', UpdatePost::class);
+Route::get('/todos', Todos::class);
+Route::get('/counter', TodoForm::class);
