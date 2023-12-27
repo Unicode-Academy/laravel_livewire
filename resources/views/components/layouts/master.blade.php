@@ -20,6 +20,11 @@
         .todos .todo-list {
             list-style: none;
         }
+
+        .todos .todo-list span.completed {
+            text-decoration: line-through;
+            color: gray;
+        }
     </style>
 </head>
 

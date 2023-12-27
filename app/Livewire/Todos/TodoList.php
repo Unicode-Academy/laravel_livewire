@@ -18,6 +18,11 @@ class TodoList extends Component
         $this->dispatch('deleted-todo', $id);
     }
 
+    public function handleCompleted($id, $status)
+    {
+        $this->dispatch('completed-todo', compact('id', 'status'));
+    }
+
     public function render()
     {
         return view('livewire.todos.todo-list');
