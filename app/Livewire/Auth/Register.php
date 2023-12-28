@@ -9,14 +9,12 @@ class Register extends Component
 {
     public RegisterForm $form;
 
-    public $email;
 
     public function handleSubmit()
     {
-        $data = $this->form->only(['name', 'email']);
-        $this->email = $this->form->email;
-        $this->form->reset('password', 'email');
-        // $this->form->store();
+        $this->form->validate();
+
+        return redirect()->to('/register');
     }
 
     public function render()
