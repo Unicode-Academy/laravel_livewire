@@ -1,5 +1,7 @@
 <?php
 
+use App\Livewire\Auth\Login;
+use App\Livewire\Auth\Register;
 use App\Livewire\Counter;
 use App\Livewire\Posts\Posts;
 use App\Livewire\Posts\CreatePost;
@@ -31,4 +33,5 @@ Route::get('/posts', Posts::class);
 Route::get('/posts/create', CreatePost::class);
 Route::get('/posts/edit/{post}', UpdatePost::class);
 Route::get('/todos', Todos::class);
-Route::get('/counter', TodoForm::class);
+Route::get('/login', Login::class);
+Route::get('/register', Register::class);
