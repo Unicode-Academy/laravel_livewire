@@ -2,11 +2,13 @@
 
 namespace App\Livewire\Forms;
 
-use Livewire\Attributes\Validate;
 use Livewire\Form;
+use Illuminate\Validation\Rule;
+use Livewire\Attributes\Validate;
 
 class RegisterForm extends Form
 {
+    #[Validate()]
     /*
     #[Validate('required|min:5', message: [
         'required' => 'Tên bắt buộc phải nhập',
@@ -21,6 +23,7 @@ class RegisterForm extends Form
         'email' => 'Email không đúng định dạng',
     ])]
     */
+    #[Validate()]
     public $email = null;
 
     /*
@@ -28,6 +31,7 @@ class RegisterForm extends Form
         'required' => 'Mật khẩu bắt buộc phải nhập'
     ])]
     */
+    #[Validate()]
     public $password = null;
 
     public function store()
@@ -47,7 +51,8 @@ class RegisterForm extends Form
                     }
                 }
             ],
-            'email' => 'required|email',
+            //'email' => 'required|email|unique:users,email,1',
+            'email' => ['required', 'email', Rule::unique('users', 'email')->ignore(1)],
             'password' => 'required'
         ];
     }
@@ -57,7 +62,8 @@ class RegisterForm extends Form
         return [
             'required' => ':attribute bắt buộc phải nhập',
             'min' => ':attribute phải từ :min ký tự',
-            'email' => ':attribute không đúng định dạng email'
+            'email' => ':attribute không đúng định dạng email',
+            'unique' => ':attribute đã được sử dụng',
         ];
     }
 
