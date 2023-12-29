@@ -9,12 +9,16 @@ class Register extends Component
 {
     public RegisterForm $form;
 
-
     public function handleSubmit()
     {
         $this->form->store();
 
         return $this->redirect('/login', true);
+    }
+
+    public function updated($name, $value)
+    {
+        //dd($name, $value);
     }
 
     public function render()

@@ -5,21 +5,24 @@
             <form action="" wire:submit="handleSubmit">
                 <div class="mb-3">
                     <label for="">Name</label>
-                    <input type="text" placeholder="Name..." class="form-control" wire:model.blur="form.name" />
+                    <input type="text" placeholder="Name..." class="form-control"
+                        wire:model.live.throttle.1000ms="form.name" wire:dirty.class="border border-danger" />
                     @error('form.name')
                     <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
                 <div class="mb-3">
                     <label for="">Email</label>
-                    <input type="text" placeholder="Email..." class="form-control" wire:model.blur="form.email" />
+                    <input type="text" placeholder="Email..." class="form-control"
+                        wire:model.live.debounce.150ms="form.email" wire:dirty.class="border border-danger" />
                     @error('form.email')
                     <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
                 <div class="mb-3">
                     <label for="">Password</label>
-                    <input type="password" placeholder="Password..." class="form-control" wire:model.blur="form.password" />
+                    <input type="password" placeholder="Password..." class="form-control"
+                        wire:model.live.debounce.150ms="form.password" wire:dirty.class="border border-danger" />
                     @error('form.password')
                     <span class="text-danger">{{$message}}</span>
                     @enderror
