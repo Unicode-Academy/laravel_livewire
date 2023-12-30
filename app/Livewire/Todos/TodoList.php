@@ -8,9 +8,13 @@ class TodoList extends Component
 {
     public $todoList = [];
 
-    public function mount($todoList = [])
+    public function mount($todoList = [], $search = [])
     {
-        $this->todoList = $todoList;
+        if (count($search) > 0) {
+            $this->todoList = $search;
+        } else {
+            $this->todoList = $todoList;
+        }
     }
 
     public function handleDelete($id)
@@ -22,6 +26,7 @@ class TodoList extends Component
     {
         $this->dispatch('completed-todo', compact('id', 'status'));
     }
+
 
     public function render()
     {
