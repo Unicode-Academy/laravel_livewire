@@ -10,6 +10,10 @@ class ProductCount extends Component
     {
         $this->dispatch('product-created', 1);
     }
+    public function handleClear()
+    {
+        $this->dispatch('product-clear')->to(ProductList::class);
+    }
     public function render()
     {
         return view('livewire.products.product-count');
