@@ -58,6 +58,18 @@ class Todos extends Component
         });
     }
 
+    #[On('clear-todo')]
+    public function clearTodos()
+    {
+        $this->todoList = [];
+        $this->msg = 'Xóa tất cả thành công';
+    }
+
+    public function updated()
+    {
+        $this->msg = 'Xóa tất cả thành công';
+    }
+
     public function render()
     {
         return view('livewire.todos.todos');
