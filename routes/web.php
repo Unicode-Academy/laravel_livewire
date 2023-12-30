@@ -8,6 +8,7 @@ use App\Livewire\Posts\CreatePost;
 use App\Livewire\Posts\UpdatePost;
 use App\Livewire\Todos\TodoForm;
 use App\Livewire\Todos\Todos;
+use App\Livewire\Toggle;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,3 +36,4 @@ Route::get('/posts/edit/{post}', UpdatePost::class);
 Route::get('/todos', Todos::class);
 Route::get('/login', Login::class);
 Route::get('/register', Register::class);
+Route::get('/toggle', Toggle::class);
