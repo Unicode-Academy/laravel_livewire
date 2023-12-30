@@ -14,6 +14,13 @@
                 <div class="d-grid">
                     <button class="btn btn-primary">Đăng nhập</button>
                 </div>
+                <p class="text-center">
+                    <a href="/register" wire:navigate>Đăng ký tài khoản</a>
+                </p>
+                <p class="text-center">
+                    <a href="/" wire:navigate.hover>Về trang chủ</a>
+                </p>
+                <button class="btn btn-info" type="button" wire:click="$refresh">Reload</button>
             </form>
         </div>
     </div>

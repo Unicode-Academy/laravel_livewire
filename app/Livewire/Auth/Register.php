@@ -4,9 +4,14 @@ namespace App\Livewire\Auth;
 
 use Livewire\Component;
 use App\Livewire\Forms\RegisterForm;
+use Livewire\Attributes\Title;
 
 class Register extends Component
 {
+    #[Title('Đăng ký')]
+
+    public $description = 'Đăng ký tài khoản';
+
     public RegisterForm $form;
 
     public function handleSubmit()
@@ -23,6 +28,8 @@ class Register extends Component
 
     public function render()
     {
-        return view('livewire.auth.register');
+        return view('livewire.auth.register')->layoutData(
+            ['description' => $this->description]
+        );
     }
 }

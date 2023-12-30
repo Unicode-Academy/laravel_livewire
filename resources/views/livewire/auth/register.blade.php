@@ -38,6 +38,9 @@
                         </span>
                     </button>
                 </div>
+                <p class="text-center">
+                    <a href="/login" wire:navigate>Đăng nhập</a>
+                </p>
 
             </form>
         </div>
