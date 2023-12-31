@@ -3,6 +3,7 @@
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
 use App\Livewire\Counter;
+use App\Livewire\MoneyConverter\MoneyConverter;
 use App\Livewire\Posts\Posts;
 use App\Livewire\Posts\CreatePost;
 use App\Livewire\Posts\UpdatePost;
@@ -39,3 +40,4 @@ Route::get('/login', Login::class);
 Route::get('/register', Register::class);
 Route::get('/toggle', Toggle::class);
 Route::get('/products', Products::class);
+Route::get('/money-converter', MoneyConverter::class);
