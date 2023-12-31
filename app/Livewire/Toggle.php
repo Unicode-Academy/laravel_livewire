@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class Toggle extends Component
 {
-    public $isShow = true;
+    public $isShow = false;
 
     public function handleReset()
     {
