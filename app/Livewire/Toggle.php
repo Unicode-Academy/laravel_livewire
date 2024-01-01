@@ -17,7 +17,7 @@ class Toggle extends Component
     #[On('toggle-clicked')]
     public function handleClick($text, $number)
     {
-        dd($text, $number);
+        //dd($text, $number);
     }
 
     public function handleSearch($name)

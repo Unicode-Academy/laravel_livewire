@@ -1,4 +1,4 @@
-<div class="container p-3" x-data="{ isShow: @js($isShow), name: '' }">
+<div class="container p-3" x-data="{ isShow: @js($isShow), name: '', message: '' }" @toggle-clicked="message=event.detail[0]">
     <p x-show="isShow">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod officiis sapiente, non, asperiores ipsa eum
         laborum praesentium suscipit esse odio facere laboriosam iusto ullam deleniti, autem eaque rerum voluptates?
@@ -11,5 +11,16 @@
     <div>
         <button x-on:click="isShow = !isShow">Toggle</button>
         <button x-on:click="$wire.$dispatch('toggle-clicked', ['Unicode Academy', 10])">Click me</button>
+        <button x-on:click="$wire.$refresh">Refresh</button>
+        <button x-on:click="$wire.$set('text', 'Hello Unicode')">Set Text</button>
     </div>
+    <div>{{$text}}</div>
+    <h3 x-text="message"></h3>
+
 </div>
+<!-- Khi dùng $wire:
+- $dispatch
+- $parent
+- $toggle
+- $set
+- $refresh-->
