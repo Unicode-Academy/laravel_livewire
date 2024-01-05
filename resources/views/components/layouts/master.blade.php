@@ -11,30 +11,32 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
 
-        .todos {
-            padding: 20px;
-        }
+    .todos {
+        padding: 20px;
+    }
 
-        .todos .todo-list {
-            list-style: none;
-        }
+    .todos .todo-list {
+        list-style: none;
+    }
 
-        .todos .todo-list span.completed {
-            text-decoration: line-through;
-            color: gray;
-        }
+    .todos .todo-list span.completed {
+        text-decoration: line-through;
+        color: gray;
+    }
     </style>
-    <script src="//unpkg.com/alpinejs" defer></script>
+
+    @vite(['resources/js/app.js'])
 </head>
 
 <body>
     {{$slot}}
+    @livewireScriptConfig
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 </body>

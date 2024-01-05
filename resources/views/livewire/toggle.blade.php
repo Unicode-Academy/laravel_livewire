@@ -1,4 +1,5 @@
-<div class="container p-3" x-data="{ isShow: @js($isShow), name: '', message: '' }" @toggle-clicked="message=event.detail[0]">
+<div class="container p-3" x-data="{ isShow: @js($isShow), name: '', message: '' }"
+    @toggle-clicked="message=event.detail[0]">
     <p x-show="isShow">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod officiis sapiente, non, asperiores ipsa eum
         laborum praesentium suscipit esse odio facere laboriosam iusto ullam deleniti, autem eaque rerum voluptates?
@@ -16,7 +17,7 @@
     </div>
     <div>{{$text}}</div>
     <h3 x-text="message"></h3>
-
+    <h2 x-clipboard>Hello Hoàng An Unicode</h2>
 </div>
 <!-- Khi dùng $wire:
 - $dispatch
