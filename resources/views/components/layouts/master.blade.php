@@ -31,14 +31,21 @@
     }
     </style>
 
-    @vite(['resources/js/app.js'])
+    {{--@vite(['resources/js/app.js'])--}}
 </head>
 
 <body>
     {{$slot}}
-    @livewireScriptConfig
+    {{--@livewireScriptConfig--}}
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
+    @persist('player-audio')
+    <audio controls preload="auto" onloadeddata="console.log('load audio')">
+        <source src="{{url('/cu-ngo-la-anh.mp3')}}" type="audio/mp3" />
+    </audio>
+    @endpersist
+    @persist('text')
+    <h2 onclick="this.style.color = 'red'">Hello các bạn</h2>
+    @endpersist
 </body>
 
 </html>
