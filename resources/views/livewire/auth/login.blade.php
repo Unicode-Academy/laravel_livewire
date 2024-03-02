@@ -17,7 +17,9 @@
                 <p class="text-center">
                     <a href="/register" wire:navigate>Đăng ký tài khoản</a>
                 </p>
-
+                <p class="text-center">
+                    <a href="#" @click.prevent="isShowModal=true">Quên mật khẩu?</a>
+                </p>
             </form>
         </div>
     </div>
