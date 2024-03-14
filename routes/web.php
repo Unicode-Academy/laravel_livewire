@@ -2,15 +2,14 @@
 
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
-use App\Livewire\Counter;
 use App\Livewire\MoneyConverter\MoneyConverter;
-use App\Livewire\Posts\Posts;
 use App\Livewire\Posts\CreatePost;
+use App\Livewire\Posts\Posts;
 use App\Livewire\Posts\UpdatePost;
 use App\Livewire\Products\Products;
-use App\Livewire\Todos\TodoForm;
 use App\Livewire\Todos\Todos;
 use App\Livewire\Toggle;
+use App\Livewire\Users\Users;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
@@ -41,3 +40,4 @@ Route::get('/register', Register::class);
 Route::get('/toggle', Toggle::class);
 Route::get('/products', Products::class);
 Route::get('/money-converter', MoneyConverter::class);
+Route::get('/users', Users::class);

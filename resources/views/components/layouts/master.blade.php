@@ -10,31 +10,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
 
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
 
-        .todos {
-            padding: 20px;
-        }
+    .todos {
+        padding: 20px;
+    }
 
-        .todos .todo-list {
-            list-style: none;
-        }
+    .todos .todo-list {
+        list-style: none;
+    }
 
-        .todos .todo-list span.completed {
-            text-decoration: line-through;
-            color: gray;
-        }
+    .todos .todo-list span.completed {
+        text-decoration: line-through;
+        color: gray;
+    }
 
-        .modal.open {
-            display: block;
-            position: fixed;
-            inset: 0;
-            background: #00000096;
-        }
+    .modal.open {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: #00000096;
+    }
     </style>
 
 </head>
@@ -61,8 +61,8 @@
         </div>
     </div>
 
-    <script src="//unpkg.com/alpinejs" defer></script>
-
+    <!-- <script src="//unpkg.com/alpinejs" defer></script>
+ -->
 
 </body>
 
