@@ -11,7 +11,25 @@
                 wire:model="keyword" />
             <button class="btn btn-primary">Tìm kiếm</button>
         </div>
-        <h3>Keyword: {{$keyword}}</h3>
-        <h3>Status: {{$status}}</h3>
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên</th>
+                    <th>Email</th>
+                    <th>Trạng thái</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($users as $key => $user)
+                    <tr>
+                        <td>{{ $key + 1 }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->status == 1 ? 'Kích hoạt' : 'Chưa kích hoạt' }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </form>
 </div>

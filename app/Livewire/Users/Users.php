@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Users;
 
+use App\Models\User;
 use Livewire\Component;
 
 class Users extends Component
@@ -16,6 +17,7 @@ class Users extends Component
 
     public $keyword = '';
     public $status = 'all';
+    public $users = [];
 
     protected function queryString()
     {
@@ -30,6 +32,22 @@ class Users extends Component
     public function render()
     {
         return view('livewire.users.users');
+    }
+
+    public function mount()
+    {
+        $this->users = User::orderBy('id', 'desc');
+        if ($this->keyword) {
+            $this->users->where(function ($query) {
+                $query->where('name', 'like', '%' . $this->keyword . '%');
+                $query->orWhere('email', 'like', '%' . $this->keyword . '%');
+            });
+        }
+        if ($this->status === 'active' || $this->status === 'inactive') {
+            $this->users->where('status', $this->status === 'active' ? 1 : 0);
+        }
+
+        $this->users = $this->users->get();
     }
 
     public function handleSubmit()
